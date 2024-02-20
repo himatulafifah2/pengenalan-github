@@ -1,0 +1,46 @@
+[System]
+Name='mamdanilamp'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=9
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Cahaya__Alami'
+Range=[0 100]
+NumMFs=3
+MF1='Rendah':'trapmf',[0 0 20 30]
+MF2='Sedang':'trapmf',[20 30 40 50]
+MF3='Tinggi':'trapmf',[40 50 100 101]
+
+[Input2]
+Name='Kehadiran__Orang'
+Range=[0 100]
+NumMFs=3
+MF1='Sedikit':'trapmf',[0 0 20 30]
+MF2='Sedang':'trimf',[10 30 50]
+MF3='Banyak':'trapmf',[30 50 100 101]
+
+[Output1]
+Name='Kecerahan__Lampu'
+Range=[0 100]
+NumMFs=2
+MF1='Redup':'trapmf',[0 0 40 70]
+MF2='Terang':'trapmf',[40 70 100 101]
+
+[Rules]
+1 1, 1 (1) : 1
+1 2, 1 (1) : 1
+1 3, 2 (1) : 1
+2 1, 1 (1) : 1
+2 2, 1 (1) : 1
+2 3, 2 (1) : 1
+3 1, 1 (1) : 1
+3 2, 1 (1) : 1
+3 3, 2 (1) : 1
